@@ -1,0 +1,7 @@
+.text{
+    color: white;
+}
+.home-service{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
