@@ -52,7 +52,7 @@ function App() {
           <PrivateRoute exact path='/manageorder'>
             <ManageOrder></ManageOrder>
           </PrivateRoute>
-          <PrivateRoute path='/travels/:key'>
+          <PrivateRoute path='/order/:id'>
             <Details></Details>
           </PrivateRoute>
           <Route path='/register'>

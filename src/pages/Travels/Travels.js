@@ -7,7 +7,7 @@ import sectionBg from "./../../assets/images/bg.jpg";
 
 const Travels = () => {
     const {travels} = useAuth()
-    const travel = travels.slice(0, 12);
+    const travel = travels;
     return (
         <div className="py-5"  style={{ background: `url(${sectionBg})`, backgroundAttachment: "fixed" }}
         >

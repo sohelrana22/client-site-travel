@@ -14,7 +14,7 @@ const Header = () => {
   <Container>
     <Navbar.Brand className="text-white" href="#home"> 
     <img width="60px" src={logo} alt="Logo" />
-    Al-Karim Hospital</Navbar.Brand>
+    Al-Karim Travel Agency</Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="ms-auto">

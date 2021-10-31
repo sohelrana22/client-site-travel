@@ -8,7 +8,7 @@ import t1 from "./../../assets/images/t1.jpeg"
 import t2 from "./../../assets/images/t2.jpeg"
 import t3 from "./../../assets/images/t3.jpeg"
 import t4 from "./../../assets/images/t4.jpeg"
-import { Container, Row, Carousel } from "react-bootstrap";
+import { Container, Row, Carousel, Accordion } from "react-bootstrap";
 import Bounce from "react-reveal/Bounce";
 import Slide from "react-reveal/Slide";
 import Zoom from 'react-reveal/Zoom';
@@ -108,6 +108,34 @@ const Home = () => {
           <img className="w-25" src={t3} alt="" />
           <img className="w-25" src={t4} alt="" />
         </div>
+        <div>
+          <h2 className="text-white d-flex justify-content-center mt-5">Our Mission & Vision</h2>
+          </div>
+       <div className="d-flex mt-5">
+       <Accordion defaultActiveKey="0">
+  <Accordion.Item eventKey="0">
+    <Accordion.Header>About Al-Karim Travel Agency. Which People Question?</Accordion.Header>
+    <Accordion.Body>
+    A travel agency is a private retailer or public service that provides travel and tourism-related services to the people. And suppliers such as activities, airlines, car rentals, cruise lines, hotels, railways, travel insurance, and package tours. Here you can know about the Top 10 Travel Agency in Bangladesh.They are the number one IATA travel agent who gets many awards from Airlines and GDS companies. Most attractive part of an online travel agent. They recommend the world’s top travel agents and suggest those companies for your best price and deal.
+    </Accordion.Body>
+  </Accordion.Item>
+  <Accordion.Item eventKey="1">
+    <Accordion.Header>Travel Agency History in Bangladesh:</Accordion.Header>
+    <Accordion.Body>
+    After the independence of 1971, the first generation of travel agents in Bangladesh began to feel united under one umbrella to create a platform for the wider interests of travel agencies to protect their rights and privileges and ensure the health of travel and tourism. Sector. On the other hand, they were more interested in developing fellowship and better understanding among them. The platform was launched in 1974 and 1975 and continues to achieve results.
+    </Accordion.Body>
+  </Accordion.Item>
+  <Accordion.Item eventKey="2">
+    <Accordion.Header>Why Al-Karim Travel Agency. our 1st recommendation?</Accordion.Header>
+    <Accordion.Body>
+    The top Travel agent in Bangladesh is Al-Karim Travel Agency by Google reviews and Facebook reviews. They are the number one IATA travel agent who gets many awards from Airlines and GDS companies. Most attractive part of an online travel agent. They recommend the world’s top travel agents and suggest those companies for your best price and deal. We found that they provide GDS training(reservation), Airline training, visa assisting training, travel agency management training, and online travel business development training. So as a travel professional in Bangladesh, we made them our top recommendation. for details or any kind of help contact with them:
+    </Accordion.Body>
+  </Accordion.Item>
+</Accordion>
+<div className="w-90 h-100">
+  <img src="https://image.freepik.com/free-vector/flat-traveling-banner-template_23-2148178437.jpg" alt="" />
+</div>
+       </div>
         <Container className="py-5">
           <Slide left>
             <h2 className="text-center text-white mb-2">Featured Destinations</h2>
