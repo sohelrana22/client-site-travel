@@ -1,10 +1,14 @@
-.add-service form{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.shipping-form{
+    margin:30px 150px;
 }
-.add-service form input, textarea{
-    width: 40% !important;
-    margin-bottom: 15px;
+.shipping-form input {
+    display: block;
+    margin-top: 30px;
+    padding: 5px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    width: 300px;
+}
+.error{
+    color: red;
 }

@@ -13,7 +13,6 @@ import AuthProvider from './contexts/AuthProvider';
 import Footer from './components/Footer/Footer';
 import Details from './pages/Details/Details';
 import PrivateRoute from './route/PrivateRoute';
-import AddService from './pages/AddService/AddService';
 import Travels from './pages/Travels/Travels';
 import MyOrder from './pages/MyOrder/MyOrder';
 import ManageOrder from './pages/ManageOrder/ManageOrder';
@@ -40,9 +39,6 @@ function App() {
           <PrivateRoute path='/myorder'>
             <MyOrder></MyOrder>
           </PrivateRoute>
-          <Route path="/addService">
-            <AddService></AddService>
-          </Route>
           <Route path='/login'>
             <Login></Login>
           </Route>

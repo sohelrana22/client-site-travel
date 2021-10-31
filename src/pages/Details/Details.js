@@ -12,8 +12,8 @@ const Details = () => {
     const [orders, setOrders] = useState([])
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
-        console.log(data);
-        fetch('http://localhost:5000/order', {
+      delete data._id;
+        fetch('https://pure-oasis-89379.herokuapp.com/order', {
             method: "POST",
             headers: {
                 "content-type": "application/json"
@@ -30,7 +30,7 @@ const Details = () => {
     };
 
     useEffect(() => {
-        fetch('http://localhost:5000/travels')
+        fetch('https://pure-oasis-89379.herokuapp.com/travels')
             .then(res => res.json())
             .then(data => {
                 const orders = data?.find(order => order?._id === id)
@@ -40,11 +40,6 @@ const Details = () => {
             })
 
     }, [id])
-
-    // const {key} = useParams();
-    //     const {travels} = useAuth()
-    // const detailService = travels.find(travel => travel?.key === Number(key));
-    // const {img, name, detail, price} = orders;
 
 
     return (
@@ -73,11 +68,16 @@ const Details = () => {
 
                 {/* } */}
                 <div className="add-service col">
-                    <form onSubmit={handleSubmit(onSubmit)}>
-                        <input {...register("name", { required: true, maxLength: 20 })} placeholder="Name" />
-                        <input {...register("price", { required: true, maxLength: 20 })} placeholder="Price" />
-                        <textarea {...register("detail")} placeholder="Detail" />
-                        <input {...register("img")} placeholder="image-url" />
+                    <form className="shipping-form" onSubmit={handleSubmit(onSubmit)}>
+
+                        <input defaultValue={user.displayName} {...register("name")} />
+
+                        <input defaultValue={user.email} {...register("email", { required: true })} />
+                        {errors.email && <span className="error">This field is required</span>}
+                        <input placeholder="Address" defaultValue="" {...register("address")} />
+                        <input placeholder="City" defaultValue="" {...register("city")} />
+                        <input placeholder="phone number" defaultValue="" {...register("phone")} />
+
                         <input type="submit" />
                     </form>
                 </div>
