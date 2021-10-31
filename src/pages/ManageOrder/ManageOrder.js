@@ -4,18 +4,18 @@ import useFirebase from '../../hooks/useFirebase';
 
 const ManageOrder = () => {
     const { user } = useFirebase()
-    const { email } = user;
+    const { id } = user;
     const [allOrder, setAllOrder] = useState([])
-    console.log(email);
+    console.log(id);
     useEffect(() => {
-        fetch(`https://pure-oasis-89379.herokuapp.com/manageorder/${email}`)
+        fetch('https://pure-oasis-89379.herokuapp.com/manageorder/')
             .then(res => res.json())
             .then(data => setAllOrder(data));
-    }, [email])
-    const handleDelete = id => {
+    }, [id])
+    const handleDelete = email => {
         const proceed = window.confirm('Are you sure, You want to cancel Order?');
         if(proceed) {
-          const url = `https://pure-oasis-89379.herokuapp.com/manageorder/${id}`;
+          const url = `https://pure-oasis-89379.herokuapp.com/manageorder/${email}`;
           fetch(url, {
               method: 'DELETE'
           })
@@ -23,10 +23,10 @@ const ManageOrder = () => {
               .then(data => {
                   console.log(data);
                   if (data.deletedCount) {
-                      alert('canceled')
-                      const remaining = allOrder.filter(single => single?._id !== id);
-                      setAllOrder(remaining)
-                  }
+                    alert('canceled')
+                    const remaining = allOrder.filter(single => single?.email !== email);
+                    setAllOrder(remaining)
+                }
   
               })
         }
@@ -88,7 +88,7 @@ const ManageOrder = () => {
             <td className='fw-bold ' key={index}>{ allOrder?.status}</td>
           ))}
           {Array.from({ length: 1 }).map((_, index) => (
-            <td  key={index}>Panding<button onClick={() => handleDelete(allOrder._id)} className="mx-3 text-danger">Delete</button></td>
+            <td  key={index}>Panding<button className="px-3 bg-danger" onClick={() => handleDelete(allOrder.email)}>Delete</button></td>
           ))}
           {Array.from({ length: 1 }).map((_, index) => (
             <td  key={index}></td>
